@@ -1,0 +1,181 @@
+.element {
+    align-items: flex-start;
+    background-color: #ffffff;
+    border-radius: 24px;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: hidden;
+    padding: 24px;
+    position: relative;
+}
+
+.element .frame {
+    align-items: flex-start;
+    display: inline-flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+}
+
+.element .group {
+    height: 40px;
+    position: relative;
+    width: 472px;
+}
+
+.element .div {
+    align-items: flex-start;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 2px;
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+
+.element .text-wrapper {
+    color: #666666;
+    font-family: "Source Code Pro-Regular", Helvetica;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1px;
+    position: relative;
+    width: 152px;
+}
+
+.element .text-wrapper-2 {
+    color: #000000;
+    font-family: "Source Code Pro-Medium", Helvetica;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    width: 126px;
+}
+
+.element .icon {
+    background-color: #dedede;
+    border-radius: 8px;
+    height: 16px;
+    left: 456px;
+    position: absolute;
+    top: 0;
+    width: 16px;
+}
+
+.element .frame-2 {
+    align-items: flex-start;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 36px;
+    position: relative;
+}
+
+.element .frame-3 {
+    align-items: center;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 12px;
+    position: relative;
+}
+
+.element .picture-or-icon {
+    background-color: #dedede;
+    border-radius: 18px;
+    height: 36px;
+    position: relative;
+    width: 36px;
+}
+
+.element .frame-4 {
+    align-items: flex-start;
+    display: inline-flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 2px;
+    position: relative;
+}
+
+.element .text-wrapper-3 {
+    color: #181818;
+    font-family: "Source Code Pro-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1px;
+    position: relative;
+    width: fit-content;
+}
+
+.element .text-wrapper-4 {
+    color: #666666;
+    font-family: "Source Code Pro-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    width: 298px;
+}
+
+.element .p {
+    color: #666666;
+    font-family: "Source Code Pro-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    width: 346px;
+}
+
+.element .picture {
+    background-color: #dedede;
+    border-radius: 12px;
+    height: 90px;
+    position: relative;
+    width: 90px;
+}
+.btnupdate{
+    width: 6.5em;
+    height: 2.3em;
+    margin: 0.5em;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 0.625em;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+   }
+.btnupdate:hover{
+    color: black;
+}
+
+.btnupdate::after{
+    content: "";
+ background: white;
+ position: absolute;
+ z-index: -1;
+ left: -20%;
+ right: -20%;
+ top: 0;
+ bottom: 0;
+ transform: skewX(-45deg) scale(0, 1);
+ transition: all 0.5s;
+}
+
+.btnupdate:hover:after{
+    transform: skewX(-45deg) scale(1, 1);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
