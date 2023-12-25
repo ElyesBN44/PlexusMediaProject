@@ -11,9 +11,11 @@ res.status(200).send({NewPost,msg:"Post added "})
 }
 exports.deletePost=async(req,res)=>{
     try{
-        const deletePost=await postSchema.findByIdAndDelete(id,{$set:{...req.body}})
-    res.status(200).send('this post was deleted')
+        const{id}=req.params
+        const deletePost=await postSchema.findByIdAndDelete(id)
+        res.status(200).send('this post was deleted')
     }catch(err){
+        console.log(err)
         res.status(500).send('not deleted')
     }
 }

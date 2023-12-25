@@ -8,8 +8,8 @@ import axios from 'axios'
 
 
 //for the posts(publications)
-export const addPost =async()=>{
-    const{data}= await axios.post(`http://localhost:5002/admin/adminpost`);
+export const addPost =async(value)=>{
+    const{data}= await axios.post(`http://localhost:5002/admin/adminpost`,{...value});
     return data
 }
 
@@ -25,9 +25,9 @@ export const UpdatePost = async(id,value)=>{
     return updatedContact
     
 }
-export const deletePost = async(id,value)=>{
-    const deletePost = await axios.put(`http://localhost:5002/admin/posts`,value);
-    return deletePost
+export const deletePost = async(id)=>{
+    const deletePost = await axios.delete(`http://localhost:5002/admin/posts/${id}`);
+    
 }
 
 

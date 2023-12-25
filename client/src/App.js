@@ -7,6 +7,7 @@ import ViewUsers_Admin from './components/admin/users_admin/view/ViewUsers_Admin
 import Admin from './components/admin/Admin'
 import { ViewPost } from './components/admin/posts_admin/view/viewPosts'
 import UpdatePosts from './components/admin/posts_admin/view/update/updatePosts'
+import AddPosts from './components/admin/posts_admin/view/addPost/AddPosts'
 
 
 function App() {
@@ -21,6 +22,8 @@ function App() {
 
         <Route path="/admin/ViewUsers" element={<ViewUsers_Admin />} />
         <Route path="/admin/posts" element={<ViewPost />} />
+        <Route path="/admin/addposts" element={<AddPosts />} />
+
         <Route path="/admin/updatepost" element={<UpdatePosts />} />
       </Routes>
     </div>

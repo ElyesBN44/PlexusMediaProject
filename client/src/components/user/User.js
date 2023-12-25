@@ -1,8 +1,27 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./frontpage.css"
 import { useNavigate } from 'react-router'
+import FontCards from './fontCard/FontCards'
+import {useDispatch,useSelector} from 'react-redux'
+import { getPost } from '../../api/api_Admin/api_admin'
+import { setPost } from '../../store/postSlice'
+
 const User = ({logout,auth}) => {
+  // jiben el postowet
+  const posts = useSelector(state=>state.post)
+  console.log('posts',posts)
   const nvigate = useNavigate()
+const dispatch = useDispatch()
+  const jibAllpost=async()=>{
+const data = await getPost()
+dispatch(setPost(data.Posts))
+console.log('data posts',data.Posts)
+  }
+
+  useEffect(()=>{
+    jibAllpost()
+   },[])
+   let array=[1,2,3,4,5,6]
   return (
     <div>
         <div className="landing-page-studio">
@@ -58,50 +77,12 @@ const User = ({logout,auth}) => {
           </div>
           <div className="rectangle-2" />
           <div className="rectangle-3" />
-          <div className="group-2">
-            <p className="text-wrapper-11">
-              We build readymade websites, mobile applications, and elaborate online business services.
-            </p>
-            <div className="div-wrapper">
-              <p className="text-wrapper-12">How can we help your Business ?</p>
-            </div>
-          </div>
-          <div className="overlap-group-wrapper">
-            <div className="overlap-group-2">
-              <div className="box-search-wrapper">
-                <img className="img-2" alt="Box search" src="/img/box-search-1.svg" />
-              </div>
-              <p className="text-wrapper-13">We present you a proposal and discuss niffty-gritty like</p>
-              <div className="text-wrapper-14">Business Idea Planning</div>
-            </div>
-          </div>
-          <div className="overlap-wrapper">
-            <div className="overlap-group-2">
-              <div className="empty-wallet-wrapper">
-                <img className="img-2" alt="Empty wallet" src="/img/empty-wallet-1.svg" />
-              </div>
-              <p className="text-wrapper-13">Protocols apart from aengage models, pricing billing</p>
-              <div className="text-wrapper-15">Financial Planning System</div>
-            </div>
-          </div>
-          <div className="group-3">
-            <div className="overlap-group-2">
-              <div className="chart-square-wrapper">
-                <img className="img-2" alt="Chart square" src="/img/chart-square-1.svg" />
-              </div>
-              <p className="text-wrapper-13">Protocols apart from aengage models, pricing billing</p>
-              <div className="text-wrapper-16">Market Analysis Project</div>
-            </div>
-          </div>
-          <div className="group-4">
-            <div className="overlap-group-2">
-              <div className="code-wrapper">
-                <img className="img-2" alt="Code" src="/img/code-1-1.svg" />
-              </div>
-              <p className="text-wrapper-13">Communication protocols apart from engagement models</p>
-              <div className="text-wrapper-17">Development Website and App</div>
-            </div>
-          </div>
+         {/* partie view khidmet el admin  */}
+{
+  posts.map((el,i)=><FontCards  i={i} post={el}  />)
+}
+         
+        
         </div>
       </div>
       <div className="great-since">
@@ -185,35 +166,34 @@ const User = ({logout,auth}) => {
           <span className="span"> Studio</span>
         </p>
         <div className="text-wrapper-27">What We Do</div>
-        <div className="text-wrapper-28">Company</div>
-        <div className="text-wrapper-29">Support</div>
-        <div className="text-wrapper-30">Contact</div>
+        <div className="text-wrapper-28"></div>
+        <div className="text-wrapper-29"></div>
+        <div className="text-wrapper-30"></div>
         <p className="web-design-app">
-          Web Design <br />
-          App Design
+          Content Strategy
+           <br />
+          Social Media Marketing Plan
           <br />
-          Social Media Manage
+          Events Online
           <br />
-          Market Analysis Project
+          Outsourcing
+          <br/>
+          Graphic Design
+          <br/>
+          Photography
         </p>
-        <div className="about-us-career">
-          About Us
-          <br />
-          Career
-          <br />
-          Become Investor
-        </div>
+       
         <div className="FAQ-policy-business">
-          FAQ
+          
           <br />
-          Policy
+          
           <br />
-          Business
+         
         </div>
         <div className="whatsapp-support">
-          WhatsApp
+          
           <br />
-          Support 24
+        
         </div>
         <img className="line" alt="Line" src="/img/line-6.svg" />
         <img className="line-2" alt="Line" src="/img/line-8.svg" />
@@ -225,7 +205,7 @@ const User = ({logout,auth}) => {
         <img className="twitter" alt="Twitter" src="/img/twitter.svg" />
         <img className="linkedin" alt="Linkedin" src="/img/linkedin.svg" />
         <img className="line-3" alt="Line" src="/img/line-7.png" />
-        <p className="text-wrapper-32">Copyright © 2022 Avi Yansah</p>
+        <p className="text-wrapper-32">Copyright © 2024 PlexusMedia</p>
       </footer>
     </div>
   </div>

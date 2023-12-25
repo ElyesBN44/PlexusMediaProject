@@ -33,70 +33,70 @@ if(id){getUniquePost(id)}
 },[id])
   return (
     <div className='bodyupdate'>
-      <form className="login-form" action="javascript:void(0);">
-  <h1>Updating</h1>
-  <div className="form-input-material">
-    <input
-      type="text"
-      name="title"
-      id="title"
-      placeholder=""
-      autoComplete="off"
-      className="form-control-material"
-      required=""
-      value={title} 
-      onChange={(e)=>setTitle(e.target.value)}
-    />
-    <label htmlFor="username">Title</label>
-  </div>
-  <div className="form-input-material">
-    <input
-      type="text"
-      name="username"
-      id="username"
-      placeholder=" "
-      autoComplete="off"
-      className="form-control-material"
-      required=""
-      value={description} 
-      onChange={(e)=>setDescription(e.target.value)}
-    />
-    <label htmlFor="username">description</label>
-  </div>
-  <div className="form-input-material">
-    <input
-      type="text"
-      name="username"
-      id="username"
-      placeholder=" "
-      autoComplete="off"
-      className="form-control-material"
-      required=""
-      value={image1} 
-      onChange={(e)=>setImage1(e.target.value)}
-    />
-    <label htmlFor="username">image1</label>
-  </div>
-  <div className="form-input-material">
-    <input
-      type="password"
-      name="password"
-      id="password"
-      placeholder=""
-      autoComplete="off"
-      className="form-control-material"
-      required=""
-      value={partenaires} 
-      onChange={(e)=>setPartenaires(e.target.value)}
-    />
-    <label htmlFor="password">partenaires</label>
-  </div>
-  <button type="submit" className="btn btn-primary btn-ghost">
-    Update
-  </button>
+    <form className="login-form" action="javascript:void(0);">
+<h1>adding posts</h1>
+<div className="form-input-material">
+  <input
+    type="text"
+    name="title"
+    id="title"
+    placeholder=""
+    autoComplete="off"
+    className="form-control-material"
+    required=""
+    value={title} 
+    onChange={(e)=>setTitle(e.target.value)}
+  />
+  <label htmlFor="username">Title</label>
+</div>
+<div className="form-input-material">
+  <input
+    type="text"
+    name="description"
+    id="description"
+    placeholder=" "
+    autoComplete="off"
+    className="form-control-material"
+    required=""
+    value={description} 
+    onChange={(e)=>setDescription(e.target.value)}
+  />
+  <label htmlFor="description">description</label>
+</div>
+<div className="form-input-material">
+  <input
+    type="text"
+    name="image1"
+    id="image1"
+    placeholder=" "
+    autoComplete="off"
+    className="form-control-material"
+    required=""
+    value={image1} 
+    onChange={(e)=>setImage1(e.target.value)}
+  />
+  <label htmlFor="image1">image1</label>
+</div>
+<div className="form-input-material">
+  <input
+    type="text"
+    name="partenaires"
+    id="partenaires"
+    placeholder=""
+    autoComplete="off"
+    className="form-control-material"
+    required=""
+    value={partenaires} 
+    onChange={(e)=>setPartenaires(e.target.value)}
+  />
+  <label htmlFor="partenaires">partenaires</label>
+</div>
+<button onClick={()=>navigate('/admin/updatepost')} className="btn btn-primary btn-ghost">
+  Update
+</button>
 </form>
 
-    </div>
+  </div>
   )
 }
 

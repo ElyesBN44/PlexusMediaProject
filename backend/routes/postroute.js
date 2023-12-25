@@ -1,5 +1,5 @@
 const express = require('express')
-const {updatePost,GetPost,addPost}=require('../controllers/postControllers')
+const {updatePost,GetPost,addPost, deletePost}=require('../controllers/postControllers')
 const postRouter=express.Router()
 
 
@@ -10,4 +10,5 @@ postRouter.get('/admin_allposts',GetPost)
 //updateposts
 postRouter.put('/updatepost/:id',updatePost)
 
+postRouter.delete('/posts/:id',deletePost)
 module.exports = postRouter
