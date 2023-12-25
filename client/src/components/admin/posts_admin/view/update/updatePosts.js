@@ -9,11 +9,12 @@ const UpdatePosts = () => {
   const [title,setTitle]=useState('')
 const [description,setDescription]=useState('')
 const [image1,setImage1]=useState('')
-const [partenaires,setPartenaires]=useState(0)
+const [partenaires,setPartenaires]=useState("")
 const navigate = useNavigate()
 const {id}=useParams()
-const handeUpdat=async(idcon,values)=>{
-await UpdatePost(idcon,values)
+const handeUpdat=async(id,values)=>{
+await UpdatePost(id,values)
+navigate('/admin/posts')
 }
 
 
@@ -91,7 +92,7 @@ if(id){getUniquePost(id)}
   />
   <label htmlFor="partenaires">partenaires</label>
 </div>
-<button onClick={()=>navigate('/admin/updatepost')} className="btn btn-primary btn-ghost">
+<button onClick={()=>handeUpdat(id,{title,description,image1,partenaires})} className="btn btn-primary btn-ghost">
   Update
 </button>
 </form>

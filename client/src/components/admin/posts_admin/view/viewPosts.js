@@ -22,10 +22,10 @@ export const ViewPost = () => {
      },[])
     const navigate = useNavigate()
 
-    const gotoupdateposts = async () => {
+    // const gotoupdateposts = async () => {
 
-        navigate("/admin/updatepost")
-    }
+    //     navigate("/admin/updatepost")
+    // }
 
     return (
         <>
@@ -62,7 +62,7 @@ export const ViewPost = () => {
                                 </div>
                             </div>
                             <p className="p"></p>
-                            <button className="btnupdate" onClick={() => gotoupdateposts()}> Update</button>
+                            <button className="btnupdate" onClick={() => navigate(`/admin/updatepost/${p._id}`)}> t7eb tbdel</button>
                             {console.log('id',p._id)}
                             <button className="btnupdate" 
                              onClick={async()=>{ await deletePost(p._id); alert('rak tfesekh');jibAllpost()}} 

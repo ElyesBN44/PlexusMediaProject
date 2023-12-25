@@ -24,7 +24,7 @@ function App() {
         <Route path="/admin/posts" element={<ViewPost />} />
         <Route path="/admin/addposts" element={<AddPosts />} />
 
-        <Route path="/admin/updatepost" element={<UpdatePosts />} />
+        <Route path="/admin/updatepost/:id" element={<UpdatePosts />} />
       </Routes>
     </div>
   );
