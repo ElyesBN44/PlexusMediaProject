@@ -1,7 +1,7 @@
 import React,{useEffect, useState} from 'react'
-import "./UpdatePosts.css"
-import {updatePost,getUniquePost} from '../../api/api_admin'
+import "./updatePosts.css"
 import { useNavigate,useParams } from 'react-router';
+import { UpdatePost } from '../../../../../api/api_Admin/api_admin';
 
 
 
@@ -13,11 +13,11 @@ const [partenaires,setPartenaires]=useState(0)
 const navigate = useNavigate()
 const {id}=useParams()
 const handeUpdat=async(idcon,values)=>{
-await updatePost(idcon,values)
+await UpdatePost(idcon,values)
 }
 
 
-const getUniqueId=async(postid)=>{
+const getUniquePost=async(postid)=>{
 const data = await getUniquePost(postid)
 console.log("data unique",data.getuniquepost
 )
@@ -29,7 +29,7 @@ setPartenaires(data.getuniquepost.partenaires)
 
 }
 useEffect(()=>{
-if(id){getUniqueId(id)}
+if(id){getUniquePost(id)}
 },[id])
   return (
     <div className='bodyupdate'>

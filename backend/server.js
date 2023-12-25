@@ -6,6 +6,7 @@ const cors =require('cors')
 const connecdb = require('./config/db')
 const authRouter= require('./routes/authuser')
 const postRouter= require('./routes/postroute')
+const routerReservation = require('./routes/reservation')
 // ajout partie contactlist
 require('dotenv').config()
 
@@ -20,9 +21,9 @@ app.use(express.json())
  app.use('/auth',authRouter)
 
 //path ggeneral pour les post
-app.use('/admin_post',postRouter)
+app.use('/admin',postRouter)
 
-
+app.use('/reservation',routerReservation)
 
 app.listen(port,(err)=>{
     err?console.log(err):console.log(`you are connected to the port ${port}`)

@@ -1,4 +1,4 @@
-import {Routes,Route} from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import Register from './components/register/Register'
 import Login from './components/login/Login'
 import './App.css'
@@ -9,20 +9,19 @@ import { ViewPost } from './components/admin/posts_admin/view/viewPosts'
 import UpdatePosts from './components/admin/posts_admin/view/update/updatePosts'
 
 
-
 function App() {
   return (
     <div className='App' >
-{/* <Navbar/> */}
+      
       <Routes>
-        <Route  path='/' element={<Register/>}/>
-        <Route path='/login' element={<Login/>}/>
-<Route path="/home" element={<HomePage/>}/>
-<Route path="/admin" element={<Admin/>}/>
+        <Route path='/' element={<Register />} />
+        <Route path='/login' element={<Login />} />
+        <Route path="/home" element={<HomePage />} />
+        <Route path="/admin" element={<Admin />} />
 
-<Route path="/admin/ViewUsers" element={<ViewUsers_Admin/>}/>
-<Route path="/admin/posts" element={<ViewPost/>}/> 
-<Route path="/admin/updatepost" element={<UpdatePosts/>}/>
+        <Route path="/admin/ViewUsers" element={<ViewUsers_Admin />} />
+        <Route path="/admin/posts" element={<ViewPost />} />
+        <Route path="/admin/updatepost" element={<UpdatePosts />} />
       </Routes>
     </div>
   );

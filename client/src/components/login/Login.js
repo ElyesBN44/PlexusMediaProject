@@ -10,9 +10,15 @@ const Login = () => {
   // partie login 
   const submitLogin=async(values)=>{
     const res = await axios.post('http://localhost:5002/auth/loginuser',values)
-    await console.log('reponse login', res.data.token)
-  await localStorage.setItem('token',res.data.token)
-  navigate('/home')
+    console.log('reponse login', res.data.token)
+
+    if (res && res.status == 200) {
+      await localStorage.setItem('token',res.data.token)
+      navigate('/home')
+
+    }else{
+      console.log("wrong password");
+    }
   }
   return (
     <div style={{display:"flex",justifyContent:"center",alignItems:"center"}}><form className="form_main" action="">

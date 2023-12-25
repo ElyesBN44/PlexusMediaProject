@@ -13,8 +13,13 @@ let navigate = useNavigate()
 
 // function api register user 
 const handelregister=async(value)=>{
-  await registerUser(value)
-navigate('/login')
+const res =  await registerUser(value)
+if (res && res.status == 200) {
+  navigate('/login')
+}else{
+  console.log("cannot register");
+}
+
 
 }
 

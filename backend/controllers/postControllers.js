@@ -9,6 +9,14 @@ res.status(200).send({NewPost,msg:"Post added "})
         res.status(500).send('could not add the post')
     }
 }
+exports.deletePost=async(req,res)=>{
+    try{
+        const deletePost=await postSchema.findByIdAndDelete(id,{$set:{...req.body}})
+    res.status(200).send('this post was deleted')
+    }catch(err){
+        res.status(500).send('not deleted')
+    }
+}
 
 exports.updatePost = async(req,res)=>{
     const {id}= req.params
